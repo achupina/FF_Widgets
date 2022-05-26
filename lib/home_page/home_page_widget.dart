@@ -12,6 +12,7 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
+  final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -49,6 +50,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   child: Stack(
                     alignment: AlignmentDirectional(0, 0.050000000000000044),
                     children: [
+                      Align(
+                        alignment: AlignmentDirectional(-0.09, 0.27),
+                        child: Form(
+                          key: formKey,
+                          autovalidateMode: AutovalidateMode.always,
+                        ),
+                      ),
                       Align(
                         alignment: AlignmentDirectional(0, -1),
                         child: SvgPicture.asset(
